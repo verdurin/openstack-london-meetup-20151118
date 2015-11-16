@@ -87,16 +87,46 @@
 					<h2>Cloud Grid Metaphor</h2>
 					<p></p>
 					<p>Sufficient bandwidth that computing on remote data is feasible</p>
+					<p>Cloud needs to fit into well established distributed computing frameworks, processes, habits and expectations</p>
 				</section>
 				<section>
 					<h2>CMS</h2>
 					<p>Incomplete/buggy EC2 API implementation</p>
 					<p>HLT</p>
+					<p>glideinWMS</p>
+					<p>Tier 0 moved entirely from traditional LSF batch farm to Agile Infrastructure i.e. OpenStack</p>
 				</section>
+				<section>
+					<h2>CMS continued</h2>
+					<p>HLT ~16,000 cores; equivalent to more than worldwide CMS pledged tier 1 resources</p>
+					<p>Nodes not designed to run clouds - designed for trigger work, no local mass storage to speak of</p>
+					<p>LHC beam not always stable - do useful work in between stable beams?</p>
+					<p>Trade-off of killing jobs when beam back versus doing useful work</p>
+					<p>Need to start and stop VMs quickly and reliably</p>
+					<p> cloud-igniter tool, to allow HLT team to be in control of VMs</p>
+					<p>Also using institutional clouds - UK and Italy)</p>
 				<section>
 					<h2>ATLAS</h2>
 					<p>Interest in ARM clouds, at an early stage</p>
 					<p>Would like equivalent of spot-pricing to allow backfilling on any resource</p>
+					<p>Micro-CernVM with cloud-init, replacing vanilla EL6 with Puppet, for contextualization</p>
+					<blockquote>The distributed, multi-cloud nature of the system presents unique challenges.</blockquote>
+				</section>
+				<section>
+					<h2>ATLAS continued</h2>
+					<p>Need Squid for applications, conditions data and CVMFS - how to discover remote proxy servers? - Shoal</p>
+					<p>Glint plugin for image management across multiple clouds</p>
+					<p>HTCondor for batch job scheduling and Cloud Scheduler for dynamic VM provisioning</p> 
+				</section>
+				<section>
+					<h2>Opportunistic clouds</h2>
+					<p>Simulation at Point 1 (cf. point 5</p>
+					<p>"suitable for running CPU-bound, low I/O workloads such as event generation and Monte Carlo production"</p>
+					<p> Using Icehouse, helps decouple support for HLT/TDAQ versus simulation work</p>
+					<p>If actual workloads is long enough, cloud disadvantages (owing to remote network access) aren't significant</p>
+					<p>Shift in methodology - experiment having to do monitoring of clouds, rather than relying on sites to do that - Ganglia</p>
+					<p>Accounting - pledges; provider versus consumer; need to check commercial invoices</p>
+					<p>Re-use Ganglia for this</p>
 				</section>
 				<section>
 					<h2>Imperial</h2>
