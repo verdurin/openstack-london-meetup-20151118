@@ -38,7 +38,6 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<h1>OpenStack in Research</h1>
@@ -52,7 +51,7 @@
 					<ul>
 						<li>Senior HPC and Cloud Systems Engineer at The Francis Crick Institute</li>
 						<li>Visitor at High Energy Physics Group, Imperial College London</li>
-						<li>OpenStack operator since Essex...</li>
+						<li>OpenStack operator (and user) since Essex...</li>
 					</ul>
 					<aside class="notes">
 						<p>At the Meetup in the Bluefin Building when Kevin Jackson was talking about the pain of Diablo</p>
@@ -72,7 +71,7 @@
 				<section>
 					<h2>Particle Physics</h2>
 					<ul>
-						<li>Global distributed computing effort to process HC data</li>
+						<li>Global distributed computing effort to process LHC data</li>
 						<li>WLCG</li>
 					</ul>
 					<aside class="notes">
@@ -95,6 +94,7 @@
 					<p>HLT</p>
 					<p>glideinWMS</p>
 					<p>Tier 0 moved entirely from traditional LSF batch farm to Agile Infrastructure i.e. OpenStack</p>
+					<p>Still some slow ramp-up times, cf. Tony's talk</p>
 				</section>
 				<section>
 					<h2>CMS continued</h2>
@@ -106,6 +106,9 @@
 				<section>
 					<h2>CMS continued</h2>
 					<p>Need to start and stop VMs quickly and reliably</p>
+					<p>Some problems with earlier OpenStack releases in stopping VMs</p>
+					<p>Write a local image pre-caching tool to speed launching with new images</p>
+					<p>Squid servers provided by HLT team</p>
 					<p> cloud-igniter tool, to allow HLT team to be in control of VMs</p>
 					<p>Also using institutional clouds - UK and Italy)</p>
 				</section>
@@ -120,7 +123,7 @@
 					<h2>ATLAS continued</h2>
 					<p>Need Squid for applications, conditions data and CVMFS - how to discover remote proxy servers? - Shoal</p>
 					<p>Glint plugin for image management across multiple clouds</p>
-					<p>HTCondor for batch job scheduling and Cloud Scheduler for dynamic VM provisioning</p> 
+					<p>HTCondor for batch job scheduling and Cloud Scheduler for dynamic VM provisioning</p>
 				</section>
 				<section>
 					<h2>Opportunistic clouds</h2>
@@ -165,6 +168,12 @@
 					<h2>Other UK projects</h2>
 					<!-- CLIMB, EBI, Sanger, JASMIN -->
 					<!-- Cambridge -->
+				</section>
+				<section>
+					<h2>References/Thanks</h2>
+					<p>Peter Love</p>
+					<p>David Colling</p>
+					<p>Anthony Tiradani</p>
 				</section>
 
 			</div>
