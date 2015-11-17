@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -45,37 +45,48 @@
 						<small>Adam Huffman <a href="http://twitter.com/adamhuffman">@adamhuffman</a></small>
 					</p>
 				</section>
-				<section>
+				<section data-background="#bbbbbb">
+					<h1>OpenStack in <strong>Scientific</strong> Research</h1>
+					<p>
+						<small>Adam Huffman <a href="http://twitter.com/adamhuffman">@adamhuffman</a></small>
+					</p>
+				</section>
+				<section id="fragments">
 					<h2>who am i?</h2>
 					<br>
 					<ul>
 						<li>Senior HPC and Cloud Systems Engineer at The Francis Crick Institute</li>
-						<li>Visitor at High Energy Physics Group, Imperial College London</li>
-						<li>OpenStack operator (and user) since Essex...</li>
+						<li class="fragment">Visitor at High Energy Physics Group, Imperial College London</li>
+						<li class="fragment">OpenStack operator (and user) since Essex...</li>
 					</ul>
 					<aside class="notes">
 						<p>At the Meetup in the Bluefin Building when Kevin Jackson was talking about the pain of Diablo</p>
-						<p>Lots of fun with upgrades</p>
+						<p>Essex described as first usable version...</p>
+					</aside>
+				</section>
+				<section id="fragments">
+					<h2>Cloud Pioneers</h2>
+					<ul>
+						<li>Experimental usage of AWS at University of Manchester ~5 years ago</li>
+						<li class="fragment">Group leaders and projects "testing the waters"</li>
+						<li class="fragment">"Credit card problem"</li>
+						<li class="fragment">Since addressed by <a href="https://janet.arcusglobal.com/">national framework agreement</a></li>
+					</ul>
+					<aside class="notes">
+						<p>Avoiding internal bureaucracy for provisioning new compute and data resources</p>
+						<p>Yes, the cloud cliche is true in this case</p>
+						<p>How big is your PI's limit?</p>
 					</aside>
 				</section>
 				<section>
-					<h2>Pioneers</h2>
+					<h2>Grid Converts</h2>
 					<ul>
-						<li>Experimental usage at University of Manchester</li>
-						<li>Group leaders and projects "testing the waters" with AWS</li>
-						<li>Avoiding internal bureaucracy for provisioning new compute and date resources</li>
-						<li>Credit card problem</li>
-						<li>Since addressed by <a href="https://janet.arcusglobal.com/">national framework agreement</a></li>
-					</ul>
-				</section>
-				<section>
-					<h2>Particle Physics</h2>
-					<ul>
+						<li>Particle Physics</li>
 						<li>Global distributed computing effort to process LHC data</li>
 						<li>WLCG</li>
 					</ul>
 					<aside class="notes">
-						<p>Lots of human effort to develop grid infrastructure</p>
+						<p>Lots of human and funding effort to develop grid infrastructure</p>
 						<p>It does work</p>
 						<p>Lots of effort to maintain it, in era of decreasing funding and increasing demands</p>
 						<p>LHC Run-2 and Run-3 and HL-LHC</p>
@@ -84,9 +95,8 @@
 				</section>
 				<section>
 					<h2>Cloud Grid Metaphor</h2>
-					<p></p>
-					<p>Sufficient bandwidth that computing on remote data is feasible</p>
-					<p>Cloud needs to fit into well established distributed computing frameworks, processes, habits and expectations</p>
+						<p>Sufficient bandwidth that computing on remote data is feasible</p>
+						<p>Cloud needs to fit into well established distributed computing frameworks, processes, habits and expectations</p>
 				</section>
 				<section>
 					<h2>CMS</h2>
@@ -139,7 +149,9 @@
 					<h2>Imperial</h2>
 					<p>Start with Folsom</p>
 					<p>Fun with upgrades</p>
-					<p>Memory leaks in Nova</p>
+					<p>Memory leaks in Nova - bugzilla report still not resolved</p>
+					<p>Gluster...</p>
+					<p>...then Ceph</p>
 				</section>
 				<section>
 					<h2>CERN</h2>
@@ -153,7 +165,7 @@
 					<p>Good case for clouds</p>
 					<p>Lots of software, constantly changing</p>
 					<p>Hard to maintain up to date central software stacks</p>
-					<p>Give users power to provisin their own images</p>
+					<p>Give users power to provision their own images</p>
 				</section>
 				<section>
 					<h2>But...</h2>
@@ -165,15 +177,50 @@
 					<p>Impedance mismatches between traditional HPC and cloud, both at system end and user end</p>
 				</section>
 				<section>
-					<h2>Other UK projects</h2>
+					<h2>Other UK projects/activities</h2>
 					<!-- CLIMB, EBI, Sanger, JASMIN -->
 					<!-- Cambridge -->
 				</section>
 				<section>
+					<section>
+					<h2>Observations</h2>
+					<ul>
+						<li>Upgrades...</li>
+						<li>Components...</li>
+						<li>Logging...</li>
+						<li>Hopes/Predictions...</li>
+					</ul>
+					</section>
+					<section id="fragments">
+						<h2>Upgrades...</h2>
+						<p class="fragment">Used to be pretty horrible</p>
+						<aside class="notes">
+							<p>Database schema horrors</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Components...</h2>
+						<p>Modularity good in principle</p>
+						<p>Can make larger system-wide changes hard e.g. global scheduler (see IRC link)</p>
+						<p>Angst with Neutron, RabbitMQ, Ceilometer</p>
+					</section>
+					<section>
+						<h2>Logging...</h2>
+					</section>
+					<section>
+						<h2>Hopes/Predictions...</h2>
+						<p>(Continue to) Take heed of Operators</p>
+						<p>Clean up APIs e.g. some new ones not properly used yet because of cross-project considerations</p>
+					</section>
+				</section>
+				<section>
 					<h2>References/Thanks</h2>
-					<p>Peter Love</p>
-					<p>David Colling</p>
-					<p>Anthony Tiradani</p>
+					<ul>
+						<li>Peter Love</li>
+						<li>David Colling</li>
+						<li>Anthony Tiradani</li>
+						<li><a href="https://github.com/hep-gc/glint">Glint image distribution service</a></li>
+					</ul>
 				</section>
 
 			</div>
