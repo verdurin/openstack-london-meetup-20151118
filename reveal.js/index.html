@@ -71,7 +71,7 @@
 						<li>Experimental usage of AWS at University of Manchester ~5 years ago</li>
 						<li class="fragment">Group leaders and projects "testing the waters"</li>
 						<li class="fragment">"Credit card problem"</li>
-						<li class="fragment">Since addressed by <a href="https://janet.arcusglobal.com/">national framework agreement</a></li>
+						<li class="fragment">(Since addressed by <a href="https://janet.arcusglobal.com/">https://janet.arcusglobal.com/ national framework agreement</a></li>
 					</ul>
 					<aside class="notes">
 						<p>Avoiding internal bureaucracy for provisioning new compute and data resources</p>
@@ -162,11 +162,12 @@
 					</aside>
 				</section>
 				<section>
-					<h2>CMS HLT continued</h2>
+					<h2>CMS HLT and other cloud usage</h2>
 					<p>Some problems with earlier OpenStack releases in stopping VMs</p>
 					<p>Wrote a local image pre-caching tool
 					<p>cloud-igniter tool, to allow HLT team to be in control of VMs</p>
-					<p>Also using institutional clouds - UK and Italy)</p>
+					<p>Also using institutional clouds - UK and Italy</p>
+					<p>Commercial providers</p>
 					<aside class="notes">
 						<p>Tool to speed launching with new images</p>
 					</aside>
@@ -177,29 +178,35 @@
 					<p>Micro-CernVM with cloud-init, replacing vanilla EL6 with Puppet, for contextualization</p>
 					<p>HTCondor batch job scheduling</p>
 					<p>Cloud Scheduler dynamic VM provisioning</p>
+					<p>CVMFS</p>
 					<aside class="notes">
 						<p>Micro-CernVM</p>
+						<p>Dynamic slots in HTCondor</p>
 					</aside>
 				</section>
 				<section>
 					<h2>ATLAS continued</h2>
 					<p>Need Squid for applications, conditions data and CVMFS - how to discover remote proxy servers? - Shoal</p>
 					<p>Glint plugin for image management across multiple clouds</p>
+					<p>OpenStack overheads</p>
+					<p>Shift in methodology</p>
+					<p>Accounting</p>
+					<p>Re-use Ganglia for this</p>
 					<aside class=Notes">
+						<p>If actual workload is long enough, cloud disadvantages (owing to remote network access, cold CVMFS caches) aren't significant</p>
+						<p>Experiment having to do monitoring of clouds, rather than relying on sites to do that - Ganglia</p>
 						<p>Internal software development required to facilitate OpenStack usage</p>
+						<p>pledges; provider versus consumer; need to check commercial invoices</p>
 					</aside>
 				</section>
 				<section>
 					<h2>ATLAS Opportunistic OpenStack</h2>
 					<p>Simulation at Point 1 project</p>
 					<blockquote>"suitable for running CPU-bound, low I/O workloads such as event generation and Monte Carlo production"</blockquote>
-					<p>Cloud overheads</p>
-					<p>Shift in methodology - experiment having to do monitoring of clouds, rather than relying on sites to do that - Ganglia</p>
-					<p>Accounting - pledges; provider versus consumer; need to check commercial invoices</p>
-					<p>Re-use Ganglia for this</p>
+					<p>Similar reliability concerns as CMS</p>
+					<p>Fast switching tool</p>
 					<aside class="notes">
-						<p>Using Icehouse, helps decouple support for HLT/TDAQ versus simulation work</p>
-						<p>If actual workload is long enough, cloud disadvantages (owing to remote network access) aren't significant</p>
+						<p>Using Icehouse, OpenStack helps decouple support for HLT/TDAQ versus simulation work</p>
 					</aside>
 				</section>
 				<section>
@@ -228,12 +235,14 @@
 					<p>Wrinkles with Cells</p>
 					<p>Single Sign On</p>
 					<p>Hypervisor tuning</p>
+					<p><a href="https://cloud.exchange/en/">https://cloud.exchange/en/</a></p>
 					<aside class="notes">
 						<p>All new compute hardware OpenStack hypervisors</p>
 						<p>Dual redundant 100Gb links to Wigner</p>
 						<p>Latency concerns re. link</p>
 						<p>HS06 benchmark</p>
 						<p>Textbook example of benefitting from contributing to upstream</p>
+						<p>DBCE, profiling work ongoing</p>
 					</aside>
 				</section>
 				<section>
