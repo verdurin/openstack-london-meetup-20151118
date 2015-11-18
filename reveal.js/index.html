@@ -65,18 +65,16 @@
 					</aside>
 				</section>
 				<section id="fragments">
-					<h2>Cloud Pioneers</h2>
+					<h2>Early cloud exposure</h2>
 					<br>
 					<ul>
-						<li>Experimental usage of AWS at University of Manchester ~5 years ago</li>
-						<li class="fragment">Group leaders and projects "testing the waters"</li>
-						<li class="fragment">"Credit card problem"</li>
-						<li class="fragment">(Since addressed by <a href="https://janet.arcusglobal.com/">https://janet.arcusglobal.com/ national framework agreement</a></li>
+						<li class="fragment">AWS experimentation at University of Manchester</li>
+						<li class="fragment">Fedora Cloud group</li>
 					</ul>
 					<aside class="notes">
-						<p>Avoiding internal bureaucracy for provisioning new compute and data resources</p>
-						<p>Yes, the cloud cliche is true in this case</p>
-						<p>How big is your PI's limit?</p>
+						<p>Avoiding internal bureaucracy for new compute/data resources</p>
+						<p>Group leaders and projects "testing the waters"</p>
+						<p>Credit card problem" - How big is your PI's limit?</p>
 						<p>AWS experiences set context and expectations for OpenStack</p>
 					</aside>
 				</section>
@@ -99,17 +97,16 @@
 				<section>
 					<h2>Cloud Impetus/Barriers</h2>
 					<br>
-					<p>Grid not so special anymore</p>
+					<p>WLCG not as special anymore</p>
 					<p>Remote data feasibility</p>
 					<br>
 					<p>Inertia</p>
 					<aside class="notes">
 						<p>Used to be bigger than everyone else</p>
-						<p>Lots of effort to maintain it, lower funding/increasing demands</p>
-						<p>Hard to recruit staff to work on relatively obscure technologies, internships etc.</p>
+						<p>Lots of effort to maintain it, lower funding/increasing demands, Run-2, HL</p>
+						<p>Hard to recruit staff/interns to work on obscure technologies</p>
 						<p>Well established distributed computing frameworks, processes, habits and expectations</p>
 						<p>40 gigabit for HEP group at Imperial</p>
-						<p>LHC Run-2 and Run-3 and HL-LHC</p>
 						<p>Gain experience for later usage of commercial cloud providers</p>
 					</aside>
 				</section>
@@ -129,13 +126,14 @@
 				</section>
 				<section>
 					<h2>CMS High-Level Trigger</h2>
+					<br>
 					<p>~16,000 cores</p>
 					<p>Available for repurposing</p>
 					<p><strong>Must not interfere with data acquisition</strong></p>
 					<aside class="notes">
-						<p>equivalent to more than worldwide CMS pledged tier 1 resources</p>
+						<p>Equivalent to more than worldwide CMS pledged tier 1 resources</p>
 						<p>i.e. valuable computational resource</p>
-						<p> when LHC not producing data e.g. LS1</p>
+						<p>When LHC not producing data e.g. LS1</p>
 					</aside>
 				</section>
 				<section>
@@ -144,6 +142,7 @@
 					<p>Incomplete/buggy EC2 API implementation</p>
 					<p>HTCondor job monitoring wrinkles</p>
 					<p>Repurposed hardware</p>
+					<p>Wrote a local image pre-caching tool
 					<aside class="notes">
 						<p>OpenStack, opportunistic, overlay, online</p>
 						<p>Conditions data</p>
@@ -158,30 +157,32 @@
 					<p>Need to start and stop VMs quickly and reliably</p>
 					<aside class="notes">
 						<p>LHC beam not always stable - do useful work in between?</p>
+						<p>Randomly distributed periods of usable time</p>
 						<p>Still some slow ramp-up times, cf. Tony's talk</p>
 					</aside>
 				</section>
 				<section>
 					<h2>CMS HLT and other cloud usage</h2>
 					<p>Some problems with earlier OpenStack releases in stopping VMs</p>
-					<p>Wrote a local image pre-caching tool
 					<p>cloud-igniter tool, to allow HLT team to be in control of VMs</p>
 					<p>Also using institutional clouds - UK and Italy</p>
 					<p>Commercial providers</p>
 					<aside class="notes">
-						<p>Tool to speed launching with new images</p>
+						<p>Cloud-igniter needed for OpenStack during fills</p>
 					</aside>
 				</section>
 				<section>
 					<h2>ATLAS</h2>
 					<p>Cloud R&amp;D then production efforts</p>
-					<p>Micro-CernVM with cloud-init, replacing vanilla EL6 with Puppet, for contextualization</p>
+					<p>Micro-CernVM with cloud-init
 					<p>HTCondor batch job scheduling</p>
 					<p>Cloud Scheduler dynamic VM provisioning</p>
 					<p>CVMFS</p>
 					<aside class="notes">
 						<p>Micro-CernVM</p>
+						<p>Replacing vanilla EL6 with Puppet, for contextualization</p>
 						<p>Dynamic slots in HTCondor</p>
+						<p>CVMFS HTTP network filesystem, primarily for software distribution</p>
 					</aside>
 				</section>
 				<section>
@@ -263,7 +264,12 @@
 				<section>
 					<h2>eMedLab</h2>
 					<p>http://www.emedlab.ac.uk</p>
-					<p>Impedance mismatches between HPC and cloud, both at system end and user end</p>
+					<p>Consortium: Crick, UCL, QMUL, KCL, EBI, Sanger, LSHTM</p>
+					<p>Medical Bioinformatics cloud, using OpenStack</p>
+					<p>Exemplar of impedance mismatches between HPC and Cloud</p>
+					<aside class="notes">
+						<p>both at system end and user end</p>
+					</aside>
 				</section>
 				<section>
 					<h2>Other UK HEI OpenStack projects/activities</h2>
@@ -272,6 +278,14 @@
 					<p>http://www.sanger.ac.uk</p>
 					<p>Cambridge, Oxford...</p>
 					<p>National working groups/SIGs</p>
+					<aside class="notes">
+						<p>CLIMB - microbial biology, across several sites, GPFS and Ceph</p>
+						<p>EBI - 1 I/O-bound, 1 compute-bound workload - bioinformatics</p>
+						<p>EBI - user education/adjustment the biggest issue so far</p>
+						<p>Sanger - service for external bio-incubator customers</p>
+						<p>Sanger - will be extended to internal users</p>
+						<p>Sanger - trade performance for reproducibility and customer workflow control</p>
+					</aside>
 				</section>
 				<section>
 					<h2>Observations</h2>
@@ -280,12 +294,14 @@
 						<li>Upgrades...</li>
 						<li>Components...</li>
 						<li>Logging...</li>
-						<li>Hopes/Predictions...</li>
+						<li>Wishlist...</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Research Clouds</h2>
 					<p>Clash of mindsets</p>
+					<p>Reproducibility opportunities</p>
+					<p>Orchestration</p>
 				</section>
 				<section>
 					<h2>Upgrades...</h2>
@@ -308,17 +324,22 @@
 					<p>More granularity would be welcome</p>
 				</section>
 				<section>
-					<h2>Hopes/Predictions...</h2>
+					<h2>Wishlist...</h2>
 						<p>(Continue to) Take heed of Operators</p>
-						<p>Clean up APIs e.g. some new ones not properly used yet because of cross-project considerations</p>
-						<p>Containers for deployment and in usage</p>
+						<p>Clean up APIs</p>
+						<p>Containers for deployment and normal usage</p>
 						<p>Manila</p>
+						<aside class="notes">
+							<p>Excellent work by e.g. Large Deployments Team, workshops, blueprints etc.</p>
+							<p>e.g. some new APIs not properly used yet because of cross-project considerations</p>
+						</aside>
 				</section>
 				<section>
 					<h2>Thanks</h2>
 					<ul>
 						<li>CMS material from David Colling and Anthony Tiradani</li>
 						<li>ATLAS updates from Peter Love</li>
+						<li>Sanger update from James Beal</li>
 					</ul>
 				</section>
 				<section>
@@ -326,6 +347,8 @@
 					<ul>
 						<li>CMS Diverse Use of Clouds, CHEP 2015</li>
 						<li>The Evolution of Cloud Computing in ATLAS, ATL-SOFT-PROC-2015-049</li>
+						<li><a href="http://cernvm.cern.ch/portal/filesystem">CVMFS</a></li>
+						<li><a href="http://cernvm.cern.ch/portal/">Micro-CernVM</a></li>
 						<li><a href="https://github.com/hep-gc/glint">Glint image distribution service</a></li>
 					</ul>
 				</section>
