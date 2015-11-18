@@ -115,12 +115,13 @@
 				</section>
 				<section>
 					<h2>CMS</h2>
+					<br>
 					<p>CMS Tier0 (~9,000 cores) now on OpenStack</p>
 					<p>Long-lived VMs</p>
 					<p>Multicore scale testing</p>
 					<p>glideinWMS</p>
 					<aside class="notes">
-						<p>Compact Muon Solenoid</p>
+						<p>Used to be on CERN LSF cluster</p>
 						<p>Tier system for distributing and processing data</p>
 						<p>Maximising efficiency by finding optimal VM size, job type etc.
 						<p>Custom job scheduling system based on HTCondor</p>
@@ -128,39 +129,47 @@
 				</section>
 				<section>
 					<h2>CMS High-Level Trigger</h2>
-					<p>~16,000 cores i.e. valuable computational resource</p>
-					<p>Available for repurposing when LHC not producing data e.g. LS1</p>
+					<p>~16,000 cores</p>
+					<p>Available for repurposing</p>
 					<p><strong>Must not interfere with data acquisition</strong></p>
 					<aside class="notes">
 						<p>equivalent to more than worldwide CMS pledged tier 1 resources</p>
+						<p>i.e. valuable computational resource</p>
+						<p> when LHC not producing data e.g. LS1</p>
 					</aside>
 				</section>
 				<section>
 					<h2>CMSooooCloud</h2>
-					<p>OpenStack, opportunistic, overlay, online</p>
 					<p>Hierarchical Squid caches</p>
 					<p>Incomplete/buggy EC2 API implementation</p>
 					<p>HTCondor job monitoring wrinkles</p>
 					<p>Repurposed hardware</p>
 					<aside class="notes">
+						<p>OpenStack, opportunistic, overlay, online</p>
 						<p>Conditions data</p>
 						<p>Nodes designed for trigger work, not clouds - no local mass storage to speak of</p>
+						<p>Made case for and obtained link upgrade</p>
 					</aside>
 				</section>
 				<section>
 					<h2>A more dynamic HLT cloud?</h2>
-					<p>LHC beam not always stable - do useful work in between stable beams?</p>
+					<p>How to expand usage?</p>
 					<p>Trade-off of killing jobs versus doing useful work</p>
-					<p>Still some slow ramp-up times, cf. Tony's talk</p>
+					<p>Need to start and stop VMs quickly and reliably</p>
+					<aside class="notes">
+						<p>LHC beam not always stable - do useful work in between?</p>
+						<p>Still some slow ramp-up times, cf. Tony's talk</p>
+					</aside>
 				</section>
 				<section>
-					<h2>CMS continued</h2>
-					<p>Need to start and stop VMs quickly and reliably</p>
+					<h2>CMS HLT continued</h2>
 					<p>Some problems with earlier OpenStack releases in stopping VMs</p>
-					<p>Write a local image pre-caching tool to speed launching with new images</p>
-					<p>Squid servers provided by HLT team</p>
-					<p> cloud-igniter tool, to allow HLT team to be in control of VMs</p>
+					<p>Wrote a local image pre-caching tool
+					<p>cloud-igniter tool, to allow HLT team to be in control of VMs</p>
 					<p>Also using institutional clouds - UK and Italy)</p>
+					<aside class="notes">
+						<p>Tool to speed launching with new images</p>
+					</aside>
 				</section>
 				<section>
 					<h2>ATLAS</h2>
@@ -181,39 +190,51 @@
 					</aside>
 				</section>
 				<section>
+					<h2>ATLAS Opportunistic OpenStack</h2>
+					<p>Simulation at Point 1 project</p>
+					<blockquote>"suitable for running CPU-bound, low I/O workloads such as event generation and Monte Carlo production"</blockquote>
+					<p>Cloud overheads</p>
+					<p>Shift in methodology - experiment having to do monitoring of clouds, rather than relying on sites to do that - Ganglia</p>
+					<p>Accounting - pledges; provider versus consumer; need to check commercial invoices</p>
+					<p>Re-use Ganglia for this</p>
+					<aside class="notes">
+						<p>Using Icehouse, helps decouple support for HLT/TDAQ versus simulation work</p>
+						<p>If actual workload is long enough, cloud disadvantages (owing to remote network access) aren't significant</p>
+					</aside>
+				</section>
+				<section>
 					<h2>ATLAS</h2>
 					<p>Interest in ARM clouds, at an early stage</p>
 					<p>Would like equivalent of spot-pricing to allow backfilling on any resource</p>
 					<blockquote>The distributed, multi-cloud nature of the system presents unique challenges.</blockquote>
 				</section>
 				<section>
-					<h2>ATLAS Opportunistic OpenStack</h2>
-					<p>Simulation at Point 1 (cf. point 5)</p>
-					<blockquote>"suitable for running CPU-bound, low I/O workloads such as event generation and Monte Carlo production"</blockquote>
-					<p>Using Icehouse, helps decouple support for HLT/TDAQ versus simulation work</p>
-					<p>If actual workloads is long enough, cloud disadvantages (owing to remote network access) aren't significant</p>
-					<p>Shift in methodology - experiment having to do monitoring of clouds, rather than relying on sites to do that - Ganglia</p>
-					<p>Accounting - pledges; provider versus consumer; need to check commercial invoices</p>
-					<p>Re-use Ganglia for this</p>
-				</section>
-				<section>
 					<h2>Imperial</h2>
-					<p>Start with Folsom</p>
 					<p>Fun with upgrades</p>
-					<p>Memory leaks in Nova - bugzilla report still not resolved</p>
-					<p>Gluster...</p>
-					<p>...then Ceph</p>
+					<p>Memory leaks in Nova</p>
+					<p>Quota problems</p>
+					<p>Gluster....then Ceph</p>
 					<aside class="notes">
+						<p>Heterogeneous hardware, started with Folsom</p>
 						<p>Had to restart Nova service, a horrible hack</p>
+						<p>bugzilla report still not resolved</p>
+						<p>Too much manual database work</p>
+						<p>Request for cloud cost comparison for GridPP</p>
 					</aside>
 				</section>
 				<section>
 					<h2>CERN</h2>
-					<p>Off-site data centre in Hungary</p>
-					<p>Wrinkles with cells</p>
-					<p>Authentication work</p>
-					<p>Examples of CERN OpenStack login and their customisations</p>
-					<p>Textbook example of benefitting from contributing to upstream</p>
+					<p>Off-site datacentre in Hungary</p>
+					<p>Wrinkles with Cells</p>
+					<p>Single Sign On</p>
+					<p>Hypervisor tuning</p>
+					<aside class="notes">
+						<p>All new compute hardware OpenStack hypervisors</p>
+						<p>Dual redundant 100Gb links to Wigner</p>
+						<p>Latency concerns re. link</p>
+						<p>HS06 benchmark</p>
+						<p>Textbook example of benefitting from contributing to upstream</p>
+					</aside>
 				</section>
 				<section>
 					<h2>Life Sciences</h2>
@@ -221,6 +242,9 @@
 					<p>Lots of software, constantly changing</p>
 					<p>Hard to maintain up to date central software stacks</p>
 					<p>Give users power to provision their own images</p>
+					<aside class="notes">
+						<p>Wild West compared with HEP</p>
+					</aside>
 				</section>
 				<section>
 					<h2>But...</h2>
@@ -229,21 +253,30 @@
 				</section>
 				<section>
 					<h2>eMedLab</h2>
-					<p>Impedance mismatches between traditional HPC and cloud, both at system end and user end</p>
+					<p>http://www.emedlab.ac.uk</p>
+					<p>Impedance mismatches between HPC and cloud, both at system end and user end</p>
 				</section>
 				<section>
-					<h2>Other UK projects/activities</h2>
-					<!-- CLIMB, EBI, Sanger, JASMIN -->
-					<!-- Cambridge -->
+					<h2>Other UK HEI OpenStack projects/activities</h2>
+					<p>http://www.climb.ac.uk</p>
+					<p>http://www.ebi.ac.uk</p>
+					<p>http://www.sanger.ac.uk</p>
+					<p>Cambridge, Oxford...</p>
+					<p>National working groups/SIGs</p>
 				</section>
 				<section>
 					<h2>Observations</h2>
 					<ul>
+						<li>Research...</li>
 						<li>Upgrades...</li>
 						<li>Components...</li>
 						<li>Logging...</li>
 						<li>Hopes/Predictions...</li>
 					</ul>
+				</section>
+				<section>
+					<h2>Research Clouds</h2>
+					<p>Clash of mindsets</p>
 				</section>
 				<section>
 					<h2>Upgrades...</h2>
@@ -263,6 +296,7 @@
 				<section>
 					<h2>Logging...</h2>
 					<p>Signs of developer-centric thinking</p>
+					<p>More granularity would be welcome</p>
 				</section>
 				<section>
 					<h2>Hopes/Predictions...</h2>
@@ -281,7 +315,7 @@
 				<section>
 					<h2>References/Links</h2>
 					<ul>
-						<li>CMS Diverse Use of Clouds</li>
+						<li>CMS Diverse Use of Clouds, CHEP 2015</li>
 						<li>The Evolution of Cloud Computing in ATLAS, ATL-SOFT-PROC-2015-049</li>
 						<li><a href="https://github.com/hep-gc/glint">Glint image distribution service</a></li>
 					</ul>
