@@ -50,6 +50,10 @@
 					<p>
 						<small>Adam Huffman <a href="http://twitter.com/adamhuffman">@adamhuffman</a></small>
 					</p>
+					<aside class="notes">
+						<p>Nothing about humanities or social sciences</p>
+						<p>Will talk a lot about the contexts in which OpenStack is used</p>
+						<p>A bit less about OpenStack itself</p>
 				</section>
 				<section id="fragments">
 					<h2>Who am I?</h2>
@@ -105,9 +109,9 @@
 						<p>Used to be bigger than everyone else</p>
 						<p>Lots of effort to maintain it, lower funding/increasing demands, Run-2, HL</p>
 						<p>Hard to recruit staff/interns to work on obscure technologies</p>
-						<p>Well established distributed computing frameworks, processes, habits and expectations</p>
-						<p>40 gigabit for HEP group at Imperial</p>
+						<p>Remote Data: 40 gigabit for HEP group at Imperial, dedicated networks</p>
 						<p>Gain experience for later usage of commercial cloud providers</p>
+						<p>Well established distributed computing frameworks, processes, habits and expectations</p>
 					</aside>
 				</section>
 				<section>
@@ -118,9 +122,10 @@
 					<p>Multicore scale testing</p>
 					<p>glideinWMS</p>
 					<aside class="notes">
+						<p>Tier 0 - data reconstruction/redistribution, Tier 1, Tier 2</p>
 						<p>Used to be on CERN LSF cluster</p>
 						<p>Tier system for distributing and processing data</p>
-						<p>Maximising efficiency by finding optimal VM size, job type etc.
+						<p>Maximising efficiency by finding optimal VM size, job type etc.</p>
 						<p>Custom job scheduling system based on HTCondor</p>
 					</aside>
 				</section>
@@ -131,6 +136,7 @@
 					<p>Available for repurposing</p>
 					<p><strong>Must not interfere with data acquisition</strong></p>
 					<aside class="notes">
+						<p>What is HLT? Filters data coming from the detector</p>
 						<p>Equivalent to more than worldwide CMS pledged tier 1 resources</p>
 						<p>i.e. valuable computational resource</p>
 						<p>When LHC not producing data e.g. LS1</p>
@@ -146,8 +152,10 @@
 					<aside class="notes">
 						<p>OpenStack, opportunistic, overlay, online</p>
 						<p>Conditions data</p>
+						<p>What should HTCondor do when VMs are suspended?</p>
 						<p>Nodes designed for trigger work, not clouds - no local mass storage to speak of</p>
-						<p>Made case for and obtained link upgrade</p>
+						<p>Made case for and obtained link upgrade to 80Gb</p>
+						<p>Bug report about changing hard-coded limit in metadata, to allow proxy certificates to be injected</p>
 					</aside>
 				</section>
 				<section>
@@ -158,7 +166,9 @@
 					<aside class="notes">
 						<p>LHC beam not always stable - do useful work in between?</p>
 						<p>Randomly distributed periods of usable time</p>
+						<p>How much work lost when VMs killed?</p>
 						<p>Still some slow ramp-up times, cf. Tony's talk</p>
+						<p>Tony's finding that EC2 API faster than Nova</p>
 					</aside>
 				</section>
 				<section>
@@ -181,23 +191,25 @@
 					<aside class="notes">
 						<p>Micro-CernVM</p>
 						<p>Replacing vanilla EL6 with Puppet, for contextualization</p>
-						<p>Dynamic slots in HTCondor</p>
+						<p>cloud-init much easier to work with - ahem</p>
+						<p>Dynamic slots in HTCondor, e.g. jobs of different types, no config. needed</p>
 						<p>CVMFS HTTP network filesystem, primarily for software distribution</p>
 					</aside>
 				</section>
 				<section>
 					<h2>ATLAS continued</h2>
-					<p>Need Squid for applications, conditions data and CVMFS - how to discover remote proxy servers? - Shoal</p>
+					<p>Need Squid for applications, conditions data and CVMFS</p> 
 					<p>Glint plugin for image management across multiple clouds</p>
 					<p>OpenStack overheads</p>
 					<p>Shift in methodology</p>
 					<p>Accounting</p>
-					<p>Re-use Ganglia for this</p>
-					<aside class=Notes">
+					<aside class="notes">
+						<p>How to discover remote proxy servers? - Shoal</p>
 						<p>If actual workload is long enough, cloud disadvantages (owing to remote network access, cold CVMFS caches) aren't significant</p>
 						<p>Experiment having to do monitoring of clouds, rather than relying on sites to do that - Ganglia</p>
-						<p>Internal software development required to facilitate OpenStack usage</p>
-						<p>pledges; provider versus consumer; need to check commercial invoices</p>
+						<p>Internal software development required to facilitate OpenStack usage, for ATLAS and CMS</p>
+						<p>Accounting: Pledges; provider versus consumer; need to check commercial invoices</p>
+						<p>Re-use Ganglia for this</p>
 					</aside>
 				</section>
 				<section>
@@ -207,11 +219,12 @@
 					<p>Similar reliability concerns as CMS</p>
 					<p>Fast switching tool</p>
 					<aside class="notes">
+						<p>Point 1 = location of ATLAS detector</p>
 						<p>Using Icehouse, OpenStack helps decouple support for HLT/TDAQ versus simulation work</p>
 					</aside>
 				</section>
 				<section>
-					<h2>ATLAS</h2>
+					<h2>ATLAS encore</h2>
 					<p>Interest in ARM clouds, at an early stage</p>
 					<p>Would like equivalent of spot-pricing to allow backfilling on any resource</p>
 					<blockquote>The distributed, multi-cloud nature of the system presents unique challenges.</blockquote>
@@ -242,6 +255,7 @@
 						<p>Dual redundant 100Gb links to Wigner</p>
 						<p>Latency concerns re. link</p>
 						<p>HS06 benchmark</p>
+						<p>Heterogeneous hardware</p>
 						<p>Textbook example of benefitting from contributing to upstream</p>
 						<p>DBCE, profiling work ongoing</p>
 					</aside>
@@ -250,22 +264,21 @@
 					<h2>Life Sciences</h2>
 					<p>Good case for clouds</p>
 					<p>Lots of software, constantly changing</p>
-					<p>Hard to maintain up to date central software stacks</p>
+					<p>Hard to maintain up to date software stacks</p>
 					<p>Give users power to provision their own images</p>
 					<aside class="notes">
 						<p>Wild West compared with HEP</p>
+						<p>PhD-ware</p>
+						<p>Data access/data transfer</p>
+						<p>Data deluge cliches</p>
 					</aside>
 				</section>
 				<section>
-					<h2>But...</h2>
-					<p>Data access/data transfer</p>
-					<p>Data deluge cliches</p>
-				</section>
-				<section>
 					<h2>eMedLab</h2>
-					<p>http://www.emedlab.ac.uk</p>
+					<p><a href="http://www.emedlab.ac.uk">http://www.emedlab.ac.uk</a></p>
 					<p>Consortium: Crick, UCL, QMUL, KCL, EBI, Sanger, LSHTM</p>
-					<p>Medical Bioinformatics cloud, using OpenStack</p>
+					<p>Medical Bioinformatics shared data cloud, using OpenStack</p>
+					<p>Currently in pilot phase</p>
 					<p>Exemplar of impedance mismatches between HPC and Cloud</p>
 					<aside class="notes">
 						<p>both at system end and user end</p>
@@ -273,15 +286,16 @@
 				</section>
 				<section>
 					<h2>Other UK HEI OpenStack projects/activities</h2>
-					<p>http://www.climb.ac.uk</p>
-					<p>http://www.ebi.ac.uk</p>
-					<p>http://www.sanger.ac.uk</p>
+					<br>
+					<p><a href="http://www.climb.ac.uk">http://www.climb.ac.uk</a></p>
+					<p><a href="http://www.ebi.ac.uk">http://www.ebi.ac.uk</a></p>
+					<p><a href="http://www.sanger.ac.uk">http://www.sanger.ac.uk</a></p>
 					<p>Cambridge, Oxford...</p>
 					<p>National working groups/SIGs</p>
 					<aside class="notes">
-						<p>CLIMB - microbial biology, across several sites, GPFS and Ceph</p>
+						<p>CLIMB - cloud infra. for microbial genomics, across several sites, GPFS and Ceph</p>
 						<p>EBI - 1 I/O-bound, 1 compute-bound workload - bioinformatics</p>
-						<p>EBI - user education/adjustment the biggest issue so far</p>
+						<p>EBI - user education/adjustment the biggest issue so far - 'cattle versus pets'</p>
 						<p>Sanger - service for external bio-incubator customers</p>
 						<p>Sanger - will be extended to internal users</p>
 						<p>Sanger - trade performance for reproducibility and customer workflow control</p>
@@ -301,7 +315,11 @@
 					<h2>Research Clouds</h2>
 					<p>Clash of mindsets</p>
 					<p>Reproducibility opportunities</p>
-					<p>Orchestration</p>
+					<p>Orchestration crucial</p>
+					<aside class="notes">
+						<p>Scepticism about running HPC in cloud (cf. RAM and CPU overcommitment)</p>
+						<p>Users disturbed by lack of a queueing system</p>
+					</aside>
 				</section>
 				<section>
 					<h2>Upgrades...</h2>
@@ -310,13 +328,18 @@
 					<p>Can't all use Continuous Deployment</p>
 					<aside class="notes">
 						<p>Database schema horrors</p>
+						<p>Desire for LTS equivalents</p>
 					</aside>
 				</section>
 				<section>
 					<h2>Components...</h2>
 					<p>Modularity good in principle</p>
-					<p>Can make larger system-wide changes hard e.g. global scheduler (see IRC link)</p>
+					<p>Can make larger system-wide changes hard e.g. Super scheduling</p>
 					<p>Angst with Neutron, RabbitMQ, Ceilometer</p>
+					<aside class="notes">
+						<p>Achieve global optimum in scheduling, not just local</p>
+						<p>Many large sites run their own custom monitoring</p>
+					</aside>
 				</section>
 				<section>
 					<h2>Logging...</h2>
@@ -329,28 +352,35 @@
 						<p>Clean up APIs</p>
 						<p>Containers for deployment and normal usage</p>
 						<p>Manila</p>
+						<p>High availability for instances</p>
 						<aside class="notes">
 							<p>Excellent work by e.g. Large Deployments Team, workshops, blueprints etc.</p>
-							<p>e.g. some new APIs not properly used yet because of cross-project considerations</p>
+							<p>Some new APIs not properly used yet because of cross-project considerations e.g. Keystone v3</p>
+							<p>Aware of work by Red Hat here, and others</p>
 						</aside>
 				</section>
 				<section>
-					<h2>Thanks</h2>
+					<h2>Acknowledgements</h2>
 					<ul>
 						<li>CMS material from David Colling and Anthony Tiradani</li>
 						<li>ATLAS updates from Peter Love</li>
 						<li>Sanger update from James Beal</li>
+						<li>EBI update from David Ocana</li>
 					</ul>
 				</section>
 				<section>
 					<h2>References/Links</h2>
 					<ul>
-						<li>CMS Diverse Use of Clouds, CHEP 2015</li>
-						<li>The Evolution of Cloud Computing in ATLAS, ATL-SOFT-PROC-2015-049</li>
+						<li>'CMS Diverse Use of Clouds', CHEP 2015</li>
+						<li>'The Evolution of Cloud Computing in ATLAS', ATL-SOFT-PROC-2015-049</li>
 						<li><a href="http://cernvm.cern.ch/portal/filesystem">CVMFS</a></li>
 						<li><a href="http://cernvm.cern.ch/portal/">Micro-CernVM</a></li>
 						<li><a href="https://github.com/hep-gc/glint">Glint image distribution service</a></li>
+						<li><a href="https://github.com/hep-gc/cloud-scheduler/">Cloud Scheduler</a></li>
 					</ul>
+				</section>
+				<section data-background="#bbbbbb">
+					<h2>Thank you</h2>
 				</section>
 			</div>
 
